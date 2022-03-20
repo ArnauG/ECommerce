@@ -1,0 +1,15 @@
+language: java
+jdk: openjdk14
+
+branches:
+  only:
+    - main
+
+jobs:
+  include:
+    - stage: Check
+      script:
+        - ./gradlew check --stacktrace
+
+after_failure: reports-publisher > rp.log
+after_success: reports-publisher > rp.log
