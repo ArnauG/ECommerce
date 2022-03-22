@@ -26,3 +26,7 @@ fun ECommerce.findEagerCustomers(eagerThreshold: Int): Set<Customer> {
     .keys
 }
 
+fun ECommerce.findFrequentProducts(customer: Customer): Set<Product> {
+  return emptySet()
+}
+
