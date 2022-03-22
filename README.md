@@ -1,4 +1,5 @@
 # ECommerce
+[![Build Status](https://app.travis-ci.com/ArnauG/ECommerce.svg?branch=main)](https://app.travis-ci.com/ArnauG/ECommerce)
 This repository is to practice with kotlin collection API
 
 In this example we are going to mock an ECommerce application and implement some
