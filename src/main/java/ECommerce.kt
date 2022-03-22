@@ -27,6 +27,10 @@ fun ECommerce.findEagerCustomers(eagerThreshold: Int): Set<Customer> {
 }
 
 fun ECommerce.findFrequentProducts(customer: Customer): Set<Product> {
-  return emptySet()
+  val customerOrderedItems = this.orders.filter { order -> order.customer == customer }
+    .flatMap { order -> order.orderItems }
+
+  return this.products.filter { p -> customerOrderedItems.count { co -> p == co.product } > 1 }.toSet()
+
 }
 
