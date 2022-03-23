@@ -33,6 +33,11 @@ fun ECommerce.findFrequentProducts(customer: Customer): Set<Product> {
 }
 
 fun ECommerce.findSmartCustomers(): Set<Customer> {
-  return emptySet()
+  return this.orders.groupBy { orders -> orders.customer }
+    .mapValues { (_, values) ->
+      values.flatMap { o -> o.orderItems }.partition { orderItem -> orderItem.discount > 0.0 }
+    }
+    .filter { (_, values) -> values.first.count() > values.second.count() }
+    .keys
 }
 

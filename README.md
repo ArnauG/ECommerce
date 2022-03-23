@@ -12,4 +12,4 @@ features using the Kotlin collection API
 1. Find all products that have not been ordered yet.
 2. Find all eager customers, all those customers that had bought more than n(as function argument) products.
 3. Find all the products, those were bought more than once for a given customer.
-4. Find all smart customers, all those customers that make products with discount than products without it.
+4. Find all smart customers, all those customers that bought more products with discount than products without it.
